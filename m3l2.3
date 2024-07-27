@@ -1,0 +1,11 @@
+from flask import Flask
+import random
+
+app = Flask(__name__)
+ideas = ["Elon Musk también aboga por la regulación de las redes sociales y la protección de los datos personales de los usuarios. Afirma que las redes sociales recopilan una enorme cantidad de información sobre nosotros, que luego puede utilizarse para manipular nuestros pensamientos y comportamientos"]
+
+@app.route("/")
+def hello_world():
+    return f'<p>{random.choice(ideas)}</p>'
+
+app.run(debug=True)
